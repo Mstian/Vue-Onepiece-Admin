@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+  - "10"
+
+install:
+  - npm install
+
+script:
+  - npm run build
+
+after_success:
+  - cd ./dist
+  - git init
+  - git config --global user.name "${U_NAME}"
+  - git config --global user.email "${U_EMAIL}"
+  - git add .
+  - git commit -m "Automatically update from travis-ci"
+  - git push --quiet --force  "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+
+branches:
+  only:
+    - master
+env:
+  global:
+    - GH_REF: github.com/Mstian/Vue-Onepiece-Admin.git
+    - GH_TOKEN:d3eafcdeb01474f512d0b6066edca4257d606980
+    - P_BRANCH:gh-pages
+    - U_EMILE:1404746239@qq.com
+    - U_NAME:Mstian
