@@ -1,4 +1,4 @@
-# plan
+# Vue3.0 ElementPlus
 
 ## Project setup
 ```
@@ -41,6 +41,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 简单，开箱即用。可以完全胡乱修改。可以作为Vue3项目基本参考。
 
 最后，求个star。
+
+![preview](https://upload-images.jianshu.io/upload_images/17538702-a79fed6717f6f0eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ### 开发过程中遇到问题以及解决方法
 
