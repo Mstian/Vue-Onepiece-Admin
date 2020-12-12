@@ -27,6 +27,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 #### 欢迎使用VUE3.0 + ElementPlus 后台管理模板
 
+UI库文档： https://element-plus.gitee.io/#/zh-CN
+
 该项目基于Vuecli 使用Vue3 + 最新版ElementPlus 构建简单版后台管理系统
 
 基本功能：（Home页面有详细介绍可参考）
