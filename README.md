@@ -46,6 +46,7 @@ UI库文档： https://element-plus.gitee.io/#/zh-CN
 
 ![preview](https://upload-images.jianshu.io/upload_images/17538702-a79fed6717f6f0eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+在线预览地址：http://admin.tianleilei.cn/#/
 
 ### 开发过程中遇到问题以及解决方法
 
