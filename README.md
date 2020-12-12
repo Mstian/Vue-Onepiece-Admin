@@ -42,6 +42,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 最后，求个star。
 
+![preview](https://upload-images.jianshu.io/upload_images/17538702-a79fed6717f6f0eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 ### 开发过程中遇到问题以及解决方法
 
 1. scss in typescript （sass问题较多，现已采用less）
