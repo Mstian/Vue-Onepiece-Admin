@@ -25,5 +25,5 @@ env:
     - GH_REF: github.com/Mstian/Vue-Onepiece-Admin.git
     - GH_TOKEN:d3eafcdeb01474f512d0b6066edca4257d606980
     - P_BRANCH:gh-pages
-    - U_EMILE:1404746239@qq.com
+    - U_EMAIL:1404746239@qq.com
     - U_NAME:Mstian

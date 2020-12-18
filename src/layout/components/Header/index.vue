@@ -67,11 +67,11 @@ export default {
 }
 .header_main {
   box-shadow: 1px 1px #eee;
-  padding-top: 10px;
+  // padding-top: 10px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   padding-left: 20px;
 }

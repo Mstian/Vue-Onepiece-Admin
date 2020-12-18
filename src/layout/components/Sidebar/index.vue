@@ -28,7 +28,7 @@ export default {
   setup () {
     const store = useStore();
     const route = useRoute();
-    const useRoutesHook = useDynamicRoutesHook();
+    const {dynamicRouteTags} = useDynamicRoutesHook();
 
     function menuSelect(index: any) {
       let parentPath = '';
@@ -36,7 +36,7 @@ export default {
       if( parentPathIndex > 0) {
         parentPath = index.slice(0, parentPathIndex);
       }
-      useRoutesHook.dynamicRouteTags(index, parentPath);
+      dynamicRouteTags(index, parentPath);
     }
     return {
       state: store.state,

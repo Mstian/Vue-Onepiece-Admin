@@ -33,14 +33,14 @@ import Drawer from "./components/Drawer/index.vue";
 import { useDynamicRoutesHook } from "@/composition/useTagViewApi";
 export default {
   setup() {
-    const useRoutesHook = useDynamicRoutesHook();
+    const {dynamicRouteTags} = useDynamicRoutesHook();
     const route = useRoute();
     const store = useStore();
     const routes = store.state.controls.staticRoutes;
     // 初始化页面刷新保证当前路由tabview存在
     let stop = watchEffect(() => {
       let parentPath = route.path.slice(0, route.path.lastIndexOf("/"));
-      useRoutesHook.dynamicRouteTags(route.path, parentPath);
+      dynamicRouteTags(route.path, parentPath);
     });
     setTimeout(() => {
       // 监听只执行一次，但获取不到当前路由，需要下一个事件轮询中取消监听
@@ -62,7 +62,6 @@ section.el-container.is-vertical {
   height: 100vh;
   overflow-y: scroll;
   width: calc(100vh - 210px);
-  min-width: 1080px;
 }
 .el-aside {
   width: auto !important;
@@ -84,9 +83,6 @@ section.el-container.is-vertical {
 .el-menu--collapse .el-submenu__title .el-submenu__icon-arrow {
   display: none;
 }
-.el-main{
-  margin-top: 10px;
-}
 </style>
 <style lang="less" scoped>
 // @import "@/style/transition.less";
@@ -95,9 +91,7 @@ section.el-container.is-vertical {
 .fade-transform-enter-active {
   transition: all .5s;
 }
-.el-main::-webkit-scrollbar{
-   display: none;
-}
+
 .fade-transform-enter {
   opacity: 0;
   transform: translateX(-30px);
@@ -110,5 +104,6 @@ section.el-container.is-vertical {
 
 .el-header {
   padding: 0;
+  height: 70px !important;
 }
 </style>

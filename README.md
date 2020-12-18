@@ -1,8 +1,12 @@
-# Vue3.0 ElementPlus
+# plan
 
 ## Project setup
 ```
 npm install
+```
+### Start mock service
+```
+npm run mock
 ```
 
 ### Compiles and hot-reloads for development
@@ -27,9 +31,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 #### 欢迎使用VUE3.0 + ElementPlus 后台管理模板
 
-UI库文档： https://element-plus.gitee.io/#/zh-CN
-
-该项目基于Vuecli 使用Vue3 + 最新版ElementPlus 构建简单版后台管理系统
+该项目采用Vue3 + 最新版ElementPlus 构建简单版后台管理系统
 
 基本功能：（Home页面有详细介绍可参考）
 通过路由自动生成侧边栏menu
@@ -42,13 +44,45 @@ UI库文档： https://element-plus.gitee.io/#/zh-CN
 
 简单，开箱即用。可以完全胡乱修改。可以作为Vue3项目基本参考。
 
-最后，求个star。
+最后，求start。
 
-![preview](https://upload-images.jianshu.io/upload_images/17538702-a79fed6717f6f0eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+### 问题以及解决方法
 
-在线预览地址：http://admin.tianleilei.cn/#/
+1. scss in typescript // less
+报错：`Cannot find module ‘./index.module.scss‘ or its corresponding type declarations.ts(2307）`
+解决： 需要添加类型声明文件
+https://blog.csdn.net/qq_41804324/article/details/109388570
+https://juejin.cn/post/6844903560056930311
 
-### 开发过程中遇到问题以及解决方法
+2. 递归组件
+组件自身调用自身 参考sideBar组件
+
+3. pug(jade)模板
+文档：https://www.pugjs.cn/api/getting-started.html
+
+4. resolvePath
+使用path模块高效的处理路径拼接
+
+5. watch 与watchEffect区别
+watch不会立即执行 watchEffect会立即执行 并且可以手动取消监听
+
+6. 新版transition使用
+参考 layout /plan/src/layout/index.vue
+
+7. 浏览器控制台警告Source Map 
+https://blog.csdn.net/sundacheng1989/article/details/51118865
+
+8. 浏览器控制台警告 HMR API usage is out of date.
+https://forum.vuejs.org/t/hmr-api-usage-is-out-of-date-mutiple-warnings/107633
+
+9. es-lint快速修复
+npm run lint -- --fix
+
+10. typescript中导入模块几种方式
+https://segmentfault.com/a/1190000018249137
+
+11. json-server mock数据
+json-server文档地址：https://github.com/typicode/json-server
 
 1. scss in typescript （sass问题较多，现已采用less）
 报错：`Cannot find module ‘./index.module.scss‘ or its corresponding type declarations.ts(2307）`
@@ -80,4 +114,8 @@ https://forum.vuejs.org/t/hmr-api-usage-is-out-of-date-mutiple-warnings/107633
 9. es-lint快速修复
 npm run lint -- --fix
 
-10. vue-router4 404页面*配置 参考router->defaultRouter.ts
+10. typescript中导入模块几种方式
+   https://segmentfault.com/a/1190000018249137
+
+11. json-server mock数据
+   json-server文档地址：https://github.com/typicode/json-server

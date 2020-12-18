@@ -19,7 +19,11 @@
     <div>8. 当前激活菜单和头部标签激活项颜色在less变量中可设置 style/variable.less/@menuActiveText</div>
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-    <h3>没有权限复杂的逻辑只有简单的布局，业务代码可以直接在自定义组件中开发</h3>
+    <div>9. mock数据：采用json-server基于RESTfulapi风格模拟数据 参考：src/mock/ 启动mock服务 npm run mock</div>
+    <el-button @click="loadData()">点击加载数据</el-button>
+    <div>
+        {{JSON.stringify(mockData.data, null, "  ")}}
+    </div>
   </div>
 </template>
 
@@ -29,25 +33,36 @@ import variable from "@/style/variable.less";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import { useRouter } from "vue-router";
 import { useTheme } from "@/composition/useThemeApi";
+
+
+import request from "@/request/index";
 export default {
   setup() {
     const themeApi = useTheme();
     const router = useRouter();
     let variables = reactive(variable);
-    const envName = reactive({ title: process.env.VUE_APP_TITLE });
+    const envName = reactive({ title: process.env.VUE_APP_TITLE});
+    const mockData = reactive({data:{}});
     function jumpToInner() {
       router.push({
         path: "/inner"
       });
     }
-
+    function loadData() {
+      request.get('http://localhost:3001/api/wans').then((data: any) => {
+        console.log(data, 'ddasd');
+        mockData.data = data.result;
+      });
+    }
     provide("obj", envName); // 向子孙组件传递参数
 
     return {
       envName,
       variables,
       themeApi,
-      jumpToInner
+      jumpToInner,
+      loadData,
+      mockData
     };
   },
   components: {

@@ -20,14 +20,14 @@ import {useRoute} from 'vue-router';
 export default {
   setup() {
     const route = useRoute();
-    const useRoutesHook = useDynamicRoutesHook();
+    const {deleteDynamicTag, dynamic} = useDynamicRoutesHook();
 
     function deleteOneMenu(item) {
-      useRoutesHook.deleteDynamicTag(item, route.path);
+      deleteDynamicTag(item, route.path);
     }
     
     return {
-        dynamicTagList: useRoutesHook.dynamic.dRoutes,
+        dynamicTagList: dynamic.dRoutes,
         deleteOneMenu
     };
   }
@@ -63,9 +63,6 @@ export default {
 .el-icon-close:hover{
   background: #b4bccc;
 }
-.el-scrollbar.scroll-container{
-  // height: 50px;
-}
 .scroll-container {
   text-align: left;
   padding: 5px 0;
@@ -77,17 +74,10 @@ export default {
     .el-scrollbar__bar {
       bottom: 0px;
     }
-    .el-scrollbar__wrap  {
+    .el-scrollbar__wrap {
       height: 49px;
-      margin-bottom: 0 !important;
     }
   }
-  .el-scrollbar__wrap::-webkit-scrollbar{
-    display: none;
-  }
-}
-.el-scrollbar__wrap{
-  margin-bottom: 0 !important;
 }
 .active{
   background: @menuActiveText;
