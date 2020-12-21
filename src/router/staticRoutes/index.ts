@@ -5,6 +5,7 @@ import Tab from '@/views/Tab.vue';
 import Image from '@/views/Image.vue';
 import Button from '@/views/Button.vue';
 import Date from '@/views/Date.vue';
+import Table from '@/views/Table.vue';
 
 /**
  * 
@@ -28,6 +29,15 @@ export const staticRoutes = [
     children: [],
     meta: {
       icon: 'el-icon-s-home'
+    }
+  },
+  {
+    path: '/table',
+    name: '表格',
+    component: Table,
+    children: [],
+    meta: {
+      icon: 'el-icon-s-management'
     }
   },
   {

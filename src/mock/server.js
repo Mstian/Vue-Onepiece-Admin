@@ -1,5 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const jsonServer = require('json-server');
 const server = jsonServer.create();
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path");
 const router = jsonServer.router(path.join(__dirname, './data.json'));
 const middlewares = jsonServer.defaults();
@@ -85,6 +87,6 @@ router.render = (req, res) => {
   };
 
 server.use(router);
-server.listen(3001, () => {
+server.listen(3000, () => { // http://localhost:3000/wans
     console.log('json server is running');
 });

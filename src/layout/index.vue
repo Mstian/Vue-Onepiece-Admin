@@ -63,6 +63,9 @@ section.el-container.is-vertical {
   overflow-y: scroll;
   width: calc(100vh - 210px);
 }
+.el-main::-webkit-scrollbar {
+	display: none;
+}
 .el-aside {
   width: auto !important;
   height: 100vh;

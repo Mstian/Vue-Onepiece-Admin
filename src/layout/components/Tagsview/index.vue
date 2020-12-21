@@ -77,6 +77,9 @@ export default {
     .el-scrollbar__wrap {
       height: 49px;
     }
+    .el-scrollbar__wrap::-webkit-scrollbar{
+      display: none;
+    }
   }
 }
 .active{
