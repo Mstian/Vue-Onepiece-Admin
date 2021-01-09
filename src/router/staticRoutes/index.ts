@@ -5,8 +5,7 @@ import Tab from '@/views/Tab.vue';
 import Image from '@/views/Image.vue';
 import Button from '@/views/Button.vue';
 import Date from '@/views/Date.vue';
-import Table from '@/views/Table.vue';
-
+import Component from '@/views/Component.vue';
 /**
  * 
  * 路由配置规则：
@@ -29,15 +28,6 @@ export const staticRoutes = [
     children: [],
     meta: {
       icon: 'el-icon-s-home'
-    }
-  },
-  {
-    path: '/table',
-    name: '表格',
-    component: Table,
-    children: [],
-    meta: {
-      icon: 'el-icon-s-management'
     }
   },
   {
@@ -123,6 +113,15 @@ export const staticRoutes = [
     children: [],
     meta: {
       icon: 'el-icon-date'
+    }
+  },
+  {
+    path: '/component',
+    name: '组件',
+    component: Component,
+    children: [],
+    meta: {
+      icon: 'el-icon-orange'
     }
   }
 ];

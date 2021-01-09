@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
-    "element-plus": "^1.0.1-beta.2",
+    "element-plus": "^1.0.1-beta.23",
     "json-server": "^0.16.3",
     "less": "^3.12.2",
     "less-loader": "^7.1.0",
