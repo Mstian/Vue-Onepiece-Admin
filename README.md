@@ -140,14 +140,14 @@ Props:
 
 配置项说明：
 
-label: String 表单项显示名称
-prop: String 表单项属性（传给后端的字段）
-clearable: Boolean 表单项内容是否可清除
-placeholder: String 表单项placeholder
-isSelect: Boolean 是否是select框（默认是input）
-options: Array Select框和Cascader的options
-isCascader: Boolean 是否是级联
-isTime: String [date, datetimerange] 日期 或者日期时间范围（默认时间是Date格式内部已做转换处理为YYYY-MM-DD HH:MM:SS格式 如果需要时间戳格式可在组件源码中自行修改）
+`label`: String 表单项显示名称
+`prop`: String 表单项属性（传给后端的字段）
+`clearable`: Boolean 表单项内容是否可清除
+`placeholder`: String 表单项placeholder
+`isSelect`: Boolean 是否是select框（默认是input）
+`options`: Array Select框和Cascader的options
+`isCascader`: Boolean 是否是级联
+`isTime`: String [date, datetimerange] 日期 或者日期时间范围（默认时间是Date格式内部已做转换处理为YYYY-MM-DD HH:MM:SS格式 如果需要时间戳格式可在组件源码中自行修改）
 
 配置示例：
 ```
@@ -220,7 +220,6 @@ isTime: String [date, datetimerange] 日期 或者日期时间范围（默认时
         defaultTime: []
     }
 ]
-
 ```
 
 
@@ -228,13 +227,13 @@ isTime: String [date, datetimerange] 日期 或者日期时间范围（默认时
 1. options Object 表格展现形式配置
 
 配置项说明：
-canCheck: Boolean 表格是否可勾选
-hasIndex: Boolean 表格是否有序号
-checkFixed: String [left right] 勾选checkbox固定位置
-indexFixed: String [left right] 序号固定位置
-opW: Number 操作栏宽度（当操作栏按钮较多时需要较宽宽度，默认为150）
-autoRequest: Boolean 是否进入页面执行一次数据请求 默认为false
-startUpdate: Date.now() // 监听该项有变化时更新请求
+`canCheck`: Boolean 表格是否可勾选
+`hasIndex`: Boolean 表格是否有序号
+`checkFixed`: String [left right] 勾选checkbox固定位置
+`indexFixed`: String [left right] 序号固定位置
+`opW`: Number 操作栏宽度（当操作栏按钮较多时需要较宽宽度，默认为150）
+`autoRequest`: Boolean 是否进入页面执行一次数据请求 默认为false
+`startUpdate`: Date.now() // 监听该项有变化时更新请求
 配置示例：
 ```
 {
@@ -251,13 +250,13 @@ startUpdate: Date.now() // 监听该项有变化时更新请求
 属性：tableColumns Array
 
 配置项说明：
-prop: String 对应后端返回表格数据字段
-label: String 表格当前列名称
-width: Number 当前列宽度
-expandFunc: Boolean 是否有扩展功能（扩展功能包括图片预览，重写数据等等，当传递imgW，isMultiCell，render时该属性必传）
-imgW: Number 图片预览时传递此参数，为预览图片宽度（图片默认是以tooltip展示的）
-isMultiCell: Boolean 是否要重写数据（场景：后端返回json字符串，前端需要取其中某一个属性，或者后端给的是0，1这样的标识，需要前端转义为汉字 是 或者否）
-render: Function 配合isMultiCell使用参数为当前表格的行数据，可以return可渲染数据，可以参考配置示例
+`prop`: String 对应后端返回表格数据字段
+`label`: String 表格当前列名称
+`width`: Number 当前列宽度
+`expandFunc`: Boolean 是否有扩展功能（扩展功能包括图片预览，重写数据等等，当传递imgW，isMultiCell，render时该属性必传）
+`imgW`: Number 图片预览时传递此参数，为预览图片宽度（图片默认是以tooltip展示的）
+`isMultiCell`: Boolean 是否要重写数据（场景：后端返回json字符串，前端需要取其中某一个属性，或者后端给的是0，1这样的标识，需要前端转义为汉字 是 或者否）
+`render`: Function 配合isMultiCell使用参数为当前表格的行数据，可以return可渲染数据，可以参考配置示例
 
 配置示例
 ```
