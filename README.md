@@ -90,7 +90,7 @@ json-server文档地址：https://github.com/typicode/json-server
 
 ##### 2021-01-09周六
 
-新增配置化生成表单查询数据生成表格组件，以下为组件使用说明文档：
+新增配置化生成表单查询数据生成表格组件，以下为组件使用说明文档：github markdown 排版有点问题，可以参考简书地址： https://www.jianshu.com/p/f4da48574eb2
 ### 功能1：表单查询
 表单支持类型：
 1. input 
