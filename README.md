@@ -422,7 +422,11 @@ export const localService = {
 };
 ```
 
-
+2021-02-22
+1. 更新ElementPlus v1.0.2-beta.32
+2. 新增JsonTable overflow 属性支持 hover展示全部内容
+3. 新增国际化中文支持
+4. 新增根据路由配置 meta信息 打开非Menu页面选择当前激活menu 详情可查看defaultRoutes
 
 
 持续更新中。。。比较慢。。。

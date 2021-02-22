@@ -134,7 +134,7 @@ export const tableColumns = [
     {
         prop: 'address',
         label: '地址',
-        width: 150,
+        width: 100,
         overflow: true
     },
     {

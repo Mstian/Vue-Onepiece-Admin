@@ -124,6 +124,7 @@
           :prop="item.prop"
           :label="item.label"
           :width="item.width"
+          :show-overflow-tooltip="item.overflow"
         >
           <!-- :show-overflow-tooltip="item.overflow" 貌似elementplus有bug -->
           <template #default="scope" v-if="item.expandFunc">

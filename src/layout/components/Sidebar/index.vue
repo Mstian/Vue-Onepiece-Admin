@@ -4,7 +4,7 @@ el-menu(
   :collapse="state.controls.isCollapse"
   :collapse-transition="false"
   router
-  :default-active="$route.path"
+  :default-active="currentActiveRoute"
   :background-color="variables.menuBg"
   @select="menuSelect"
   :text-color="variables.menuText"
@@ -18,7 +18,7 @@ import { useStore } from 'vuex';
 import {
     useRouter, useRoute
 } from "vue-router";
-import {ref, onMounted} from 'vue';
+import {ref, watch, onMounted} from 'vue';
 import Sidebar from './Sidebar.vue';
 
 import {useDynamicRoutesHook} from '@/composition/useTagViewApi';
@@ -29,6 +29,16 @@ export default {
     const store = useStore();
     const route = useRoute();
     const {dynamicRouteTags} = useDynamicRoutesHook();
+
+    let currentActiveRoute = ref('');
+
+    watch(route, (newVal, oldVal) => {
+      if(newVal.meta.activePath) {
+        currentActiveRoute.value = newVal.meta.activePath;
+      } else {
+        currentActiveRoute.value = newVal.path;
+      }
+    });
 
     function menuSelect(index: any) {
       let parentPath = '';
@@ -41,7 +51,8 @@ export default {
     return {
       state: store.state,
       menuSelect,
-      variables
+      variables,
+      currentActiveRoute
     };
   },
   components: {

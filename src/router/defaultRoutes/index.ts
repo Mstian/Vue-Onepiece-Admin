@@ -4,7 +4,10 @@ const defaultRoutes: any = [
   {
     path: "/inner",
     name: "内部页面",
-    component: Inner
+    component: Inner,
+    meta: {
+      activePath: '/'  // 打开非Menu页面选择当前激活menu
+    }
   },
   {
     path: '/:pathMatch(.*)*',
