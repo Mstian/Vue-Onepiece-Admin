@@ -43,7 +43,7 @@ UI库文档： https://element-plus.gitee.io/#/zh-CN
 
 ![preview](https://upload-images.jianshu.io/upload_images/17538702-a79fed6717f6f0eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-在线预览地址：http://admin.tianleilei.cn/#/
+##### 在线预览地址：http://admin.tianleilei.cn/#/
 
 ### 开发过程中遇到问题以及解决方法
 
@@ -90,7 +90,7 @@ json-server文档地址：https://github.com/typicode/json-server
 
 ##### 2021-01-09周六
 
-新增配置化生成表单查询数据生成表格组件，以下为组件使用说明文档：github markdown 排版有点问题，可以参考简书地址： https://www.jianshu.com/p/f4da48574eb2
+新增配置化生成表单查询数据生成表格组件，以下为组件使用说明文档：
 ### 功能1：表单查询
 表单支持类型：
 1. input 
@@ -421,12 +421,22 @@ export const localService = {
     }
 };
 ```
+##### 2021-04-06周二
+增加登录界面
 
-2021-02-22
-1. 更新ElementPlus v1.0.2-beta.32
-2. 新增JsonTable overflow 属性支持 hover展示全部内容
-3. 新增国际化中文支持
-4. 新增根据路由配置 meta信息 打开非Menu页面选择当前激活menu 详情可查看defaultRoutes
+主要变化文件如下图
+
+![image.png](https://upload-images.jianshu.io/upload_images/17538702-a1c6540d90e96e19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+由于之前组件设计问题，导致登录界面不太好加，所以找了一个比较trick的方案。将登录路由添加到页面中。
+```
+<template>
+  <div>
+    <router-view v-if="$route.path === '/login'"></router-view>
+    <layout v-else></layout>
+  </div>
+</template>
+```
 
 
 持续更新中。。。比较慢。。。
