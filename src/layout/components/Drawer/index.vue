@@ -19,17 +19,23 @@
                   @click="themeApi.setTheme(item)" >
                 </span>
               </div>
+              
             </div> 
+            <div class="logout">
+               <el-button size="mini" type="danger" @click="logout()">退出登录</el-button>
+            </div>
           </div>
         </el-drawer>
     </div>
 </template>
 <script>
 import {ref, reactive} from "vue";
+import { useRouter } from "vue-router";
 import {useTheme} from '@/composition/useThemeApi';
 export default {
     setup() {
       let drawer = ref(false);
+      const router = useRouter();
       const themeApi = useTheme();
       const themeType = reactive({
         themeArr: ['#FFFFFF', '#999EFF', '#1890ff', '#304156','#212121','#11a983', '#13c2c2', '#6959CD', '#f5222d']
@@ -41,12 +47,17 @@ export default {
         console.log(123);
       }
 
+      const logout = () => {
+        localStorage.removeItem('user');
+        router.push('/login');
+      };
       return {
         drawer,
         openDrawer,
         themeApi,
         activeChange,
-        themeType
+        themeType,
+        logout
       };
     }
 };

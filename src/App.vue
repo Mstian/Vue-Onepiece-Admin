@@ -1,9 +1,15 @@
 <template>
-  <layout></layout>
+  <div>
+    <router-view v-if="$route.path === '/login'"></router-view>
+    <layout v-else></layout>
+  </div>
 </template>
 <script>
 import layout from '@/layout/index.vue';
 export default {
+  setup() {
+    return {};
+  },
   components: {
     layout
   }
